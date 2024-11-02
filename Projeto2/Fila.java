@@ -42,7 +42,6 @@ public class Fila<T> {
         return valor;
     }
 
-
     public Par searchDequeue(Fila<Par> registradores, char registrador) {
         for(int i = 0; i < 26; i++){
             Par parAtual = registradores.dequeue();
