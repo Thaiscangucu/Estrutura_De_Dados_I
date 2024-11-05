@@ -1,3 +1,9 @@
+// |--------------- Projeto Estrutura De Dados I ------------------|
+// |-------------- Interpretador REPL de Assembly -----------------|
+
+// |-- Nome: Thais Ferreira Canguçu  RA: 10403283 -----------------|
+// |-- Nome: Pedro Moniz Canto       RA: 10426546 -----------------|
+
 public class LinkedList {
     private Node head;
     private int size; 
