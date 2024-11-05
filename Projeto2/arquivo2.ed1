@@ -1,0 +1,9 @@
+10 mov a 5
+10 mov b 3
+20 mov b x
+30 add c 10
+40 inc 10
+50 jnz a linha20
+60 mul a b c
+70 jnz a 90
+80 out 9999
