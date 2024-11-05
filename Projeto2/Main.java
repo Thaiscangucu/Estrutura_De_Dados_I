@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-  private static String path = "/Users/tatacangucu/";
   private static String ArquivoCarregado = null;
   public static void main(String[] args) throws IOException {
 
@@ -31,9 +30,9 @@ public class Main {
         else {
           try {
             // Procura o arquivo com o nome inserido
-            File arquivo = new File(path+nomeArquivo);
+            File arquivo = new File(nomeArquivo);
             Scanner input = new Scanner(arquivo);
-            
+
             // Insere as linhas do arquivo na lista encadeada listArquivo.
             while (input.hasNextLine()) {
               String linha = input.nextLine();
@@ -58,9 +57,13 @@ public class Main {
         if (ArquivoCarregado == null) {
           System.out.println("Erro: Nenhum arquivo carregado.\n");
         } 
+        
 
         // Se sim imprime as linhas do arquivo.
         else {
+          if (listArquivo.isEmpty()) {
+              System.out.println("Erro: arquivo vazio.\n");
+          }
           try {
             int count = 0;
             for (int i = 1; i <= listArquivo.getSize(); i++) {
@@ -92,7 +95,7 @@ public class Main {
           executar.run();
         }
       }
-     
+
       // Comando INS 
       else if (comando.split(" ")[0].equalsIgnoreCase("INS")) {
         //Verifica se um arquivo já foi carregado
@@ -191,7 +194,7 @@ public class Main {
           BufferedWriter writer = null;
           try {
               // Salva o arquivo com o nome do arquivo carregado
-              File arquivo = new File("/Users/tatacangucu/" + ArquivoCarregado);
+              File arquivo = new File(ArquivoCarregado);
               writer = new BufferedWriter(new FileWriter(arquivo));
               Node pAnda = listArquivo.getHead(); 
 
@@ -237,7 +240,7 @@ public class Main {
               BufferedWriter writer2 = null;
               try {
                 // Cria o arquivo com o nome do arquivo inserido
-                File arquivo = new File(path + novoNome);
+                File arquivo = new File(novoNome);
                 writer2 = new BufferedWriter(new FileWriter(arquivo));
                 Node pAnda = listArquivo.getHead(); 
                 // Percorre a lista encadeada e escreve cada elemento
@@ -246,7 +249,7 @@ public class Main {
                     writer2.newLine();
                     pAnda = pAnda.getProx();
                 }
-                
+
                 System.out.println(novoNome + " salvo com sucesso.\n");
               } 
               // Se não, mostra mensagem de erro.
@@ -266,7 +269,7 @@ public class Main {
           // Se o arquivo não existir, o programa cria um novo arquivo com o nome inserido pelo usuário.
           else{
             try {
-              File novoArquivo = new File(path + novoNome);
+              File novoArquivo = new File(novoNome);
               writer = new BufferedWriter(new FileWriter(novoArquivo));
               Node pAnda = listArquivo.getHead();
 
