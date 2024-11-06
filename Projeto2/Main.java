@@ -75,7 +75,7 @@ public class Main {
                 // Se sim imprime as linhas do arquivo.
                 else {
                     if (listArquivo.isEmpty()) {
-                        System.out.println("Erro: arquivo vazio.\n");
+                        System.out.println("Arquivo vazio.\n");
                     }
                     try {
                         int count = 0;
@@ -127,6 +127,11 @@ public class Main {
 
                         // Verifica se o segundo argumento é um dos comandos disponíveis: mov/add/jnz etc.
                         if(palavras[1].length()!= 3){
+                            System.out.println("Erro: comando INS inválido.\n");
+                        }
+
+                        // Verifica se o primeiro argumento é um registrador ou um número.
+                        else if(palavras[2].matches("\\d+")){
                             System.out.println("Erro: comando INS inválido.\n");
                         }
 
@@ -330,3 +335,18 @@ public class Main {
         scanner.close();
     }
 }
+
+// Referências:
+// ORACLE. Interface Queue (Java SE 8). Disponível em: <https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html>. Acesso em: 3 nov. 2024.
+// ORACLE. Class LinkedList (Java SE 8). Disponível em: <https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html>. Acesso em: 4 nov. 2024.
+// ORACLE. Interface Node (W3C DOM Level 3 Core Specification). Disponível em: <https://docs.oracle.com/javase/8/docs/api/org/w3c/dom/Node.html>. Acesso em: 5 nov. 2024.
+// LENOVO. What is REPL?. Disponível em: <https://www.lenovo.com/us/en/glossary/repl/>. Acesso em: 3 nov. 2024.
+// DIGITALOCEAN. What is REPL?. Disponível em: <https://www.digitalocean.com/community/tutorials/what-is-repl>. Acesso em: 4 nov. 2024.
+// W3SCHOOLS. Java Files - Reading Files in Java. Disponível em: <https://www.w3schools.com/java/java_files_read.asp>. Acesso em: 5 nov. 2024.
+// ACM DIGITAL LIBRARY. Assembly Language For Students. Disponível em: <https://dl.acm.org/doi/book/10.5555/3125846>. Acesso em: 6 nov. 2024.
+// MISSOURI STATE UNIVERSITY. MARS MIPS Simulator. Disponível em: <https://computerscience.missouristate.edu/mars-mips-simulator.htm>. Acesso em: 4 nov. 2024.
+// UFSM. MARS: IDE para programação em Assembly. Disponível em: <https://www.ufsm.br/pet/sistemas-de-informacao/2018/09/01/mars-ide-para-programacao-em-assembl>. Acesso em: 5 nov. 2024.
+// SANDERSON, D. MARS (MIPS Assembler and Runtime Simulator). Disponível em: <https://dpetersanderson.github.io/>. Acesso em: 6 nov. 2024.
+// PUGA, S.; RISSETTI, G. Lógica de programação e estrutura de dados: com aplicações em Java. 2ª ed. São Paulo: Pearson, 2010.
+// ASCENCIO, A. F. G.; ARAÚJO, G. S. Estrutura de dados: algoritmos, análise da complexidade e implementações em Java e C/C++. São Paulo: Pearson Education do Brasil, 2011.
+// ZIVIANI, N. Projeto de Algoritmos: Com Implementações em Java e C++. São Paulo: Cengage Learning, 2011.
